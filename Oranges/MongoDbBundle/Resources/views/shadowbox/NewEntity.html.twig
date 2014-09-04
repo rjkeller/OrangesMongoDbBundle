@@ -1,0 +1,28 @@
+{% include "FrontendBundle:shadowbox:generic.twig.html"
+with {
+	'name': 'NewEntity',
+	'form': 'NewEntity',
+	'alert': 'BlueAlert'
+}
+%}
+
+<h1>{{ title }}</h1>
+
+<table width="100%">
+	{% for row in entity.Fields %}
+	{% if entity.printField(row) %}
+	<tr>
+		<td>{{ entity.Name(row) }}</td>
+		<td><input type="text" class="inputbox" name="{{ row }}" value="{{ entity[row] }}"></td>
+	</tr>
+	{% endif %}
+	{% endfor %}
+</table>
+
+{% include "FrontendBundle:shadowbox:yesNoButton.twig.html"
+with {
+	'yesButton': 'Create',
+	'noButton': 'Cancel'
+}
+%}
+

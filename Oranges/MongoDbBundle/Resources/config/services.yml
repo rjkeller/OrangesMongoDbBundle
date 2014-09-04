@@ -1,0 +1,5 @@
+services:
+    mongo_converter:
+        class:  Oranges\MongoDbBundle\Request\DbConverter
+        tags:
+            - { name: request.param_converter, priority: -2, converter: mongo_converter }

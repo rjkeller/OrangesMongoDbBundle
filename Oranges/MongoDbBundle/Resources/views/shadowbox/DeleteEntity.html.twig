@@ -1,0 +1,23 @@
+{% include "FrontendBundle:shadowbox:generic.twig.html"
+with {
+	'name': 'NewEntity',
+	'form': 'NewEntity',
+	'alert': 'BlueAlert'
+}
+%}
+
+<h1>{{ title }}</h1>
+
+{% if desc is defined %}
+	{{ desc }}
+{% else %}
+	Are you sure you want to delete this item?
+{% endif %}
+
+{% include "FrontendBundle:shadowbox:yesNoButton.twig.html"
+with {
+	'yesButton': 'Delete',
+	'noButton': 'Cancel'
+}
+%}
+
