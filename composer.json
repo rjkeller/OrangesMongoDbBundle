@@ -1,3 +1,6 @@
 {
-    "name": "rjkeller/OrangesMongoDbBundle"
+    "name": "rjkeller/OrangesMongoDbBundle",
+    "autoload": {
+        "psr-0": { "": "/" }
+    }
 }
